@@ -1,0 +1,42 @@
+{% extends 'aapp/base.html' %}
+{% load static %}
+{% static "images" as baseUrl %}
+
+{% block islam %}
+
+  <div class="content">
+    <div class="content_resize">
+      <div class="mainbar">
+       {% for islam in islams %}
+         <h3><a href="{% url 'islam_details' islam.id %}">{{islam.title}}</a></h3>
+           <a href="{% url 'islam_details' islam.id %}"> <img  src="{{islam.image.url}}" alt="{{islam.alter}}" width="700" ></a>
+        <br>
+        <br>
+
+<div class="clr"></div>
+<!--           <h5> {{post.post_date}}</h5>
+          <div class="clr"></div>
+          <p>Posted by <a href="#">Admin</a> <span>&nbsp;&bull;&nbsp;</span> Filed under <a href="#">templates</a>, <a href="#">internet</a></p> -->
+
+          <p>{{islam.content|slice:'400'}} ... <a href="{% url 'islam_details' islam.id %}"><span>Подробнее</span> </p></a>
+
+                <hr> 
+<dir class="clr"></dir>
+{% endfor %}
+         
+         <br>
+         <br>
+         <br>
+         <br>
+
+        {% include 'aapp/pagination.html' with page=posts %}
+
+
+
+      </div>
+    </div>
+  </div>
+
+
+{% endblock %}
+

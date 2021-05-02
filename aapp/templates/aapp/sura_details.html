@@ -1,0 +1,20 @@
+{% extends 'aapp/base.html' %}
+{% load static %}
+{% static "images" as baseUrl %}
+
+
+{% block quran %}
+  <div class="content">
+    <div class="content_resize">
+      <div class="mainbar">
+
+
+         <h2>{{sura.sura_title}}</h2>
+         <p> <h4>{{sura.sura_content| linebreaks}}</h4></p>
+          <div class="clr"></div>
+
+      </div>
+    </div>
+  </div>
+{% endblock %}
+

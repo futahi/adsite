@@ -1,0 +1,67 @@
+{% extends 'aapp/base.html' %}
+{% load static %}
+{% static "images" as baseUrl %}
+{% load crispy_forms_tags %}
+
+{% block family %}
+<div class="content">
+    <div class="content_resize">
+      <div class="mainbar">
+        <div class="details"> 
+          <h2>{{family.title}}</h2>
+          <h5> {{family.date}}</h5>
+          <div>
+           <img  src="{{family.image.url}}" alt="{{family.alter}}" width="800px">
+          </div>
+
+<div class="clr"></div>
+         <!--  
+          <p>Posted by <a href="#">Admin</a> <span>&nbsp;&bull;&nbsp;</span> Filed under <a href="#">templates</a>, <a href="#">internet</a></p> -->
+
+          <p>{{family.content | linebreaks}} </p>
+      </div>
+
+
+          {% comment %} <div class="clr"></div>
+          <hr>
+          <h2>Комментарии ({{fcomments.count}})</h2>
+        {% if fcomments %}
+          {% for fcomment in fcomments %}
+
+          <div class="comment">
+            <h4>({{fcomment.name}})</h4>
+            <small> {{fcomment.date}}</small>
+            <p>{{fcomment.body | linebreaks}}</p>
+          </div>
+          {% endfor %}
+
+        {% else %}
+          <h4>Нет Комментариев</h4>
+
+        {% endif %}
+
+          <div class="clr"></div>
+
+          <h2>Добавить комментарий</h2>
+          <form method="POST"></form>
+          <div class="clr"></div>
+          <form  method="POST" >
+            <ol>
+              <li>
+            {% csrf_token %}
+            {{fcomment_form | crispy}}
+            </li>
+
+              <li>
+                <input type="submit" value="Опубликовать" class="send" />
+                <div class="clr"></div>
+              </li>
+            </ol>
+          </form> {% endcomment %}
+
+
+       
+
+    </div>
+  </div>
+{% endblock %}

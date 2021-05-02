@@ -1,0 +1,177 @@
+{% load static %}
+{% load crispy_forms_tags %}
+<!DOCTYPE html >
+<html>
+<head>
+<!-- {% block title %}<title>ИКЦ</title>{% endblock %}
+ --> <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ {% comment %} <meta charset="utf-8" /> {% endcomment %}
+<meta name="viewport" content="width=device-width< initial-scale=1< shrink-to-fit=no" /> 
+{% if title %}
+<title>ИКЦ | {{title}}</title>
+{% else %}
+<title>ИКЦ</title>
+{% endif %}
+
+<link rel="stylesheet"  media="screen and (color)" href="{% static 'css/style.css' %}"
+<link rel="stylesheet" href="{% static 'css/coin-slider.css' %}" />
+<link rel="shortcut icon" href="{% static 'images/logo.png' %}">
+
+<link rel="stylesheet" href="{% static 'https://www.w3schools.com/w3css/4/w3.css' %}"/>
+
+<script type="text/javascript" src="{% static 'js/cufon-yui.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/cufon-aller.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/jquery-1.4.2.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/script.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/coin-slider.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/all.min.js' %}"></script>
+
+</head>
+
+
+<body>
+
+<div class="header">
+<div class="container">
+  <div class="header_resize">  
+  
+  
+<div class = "log"> 
+ <div class="logo-img"><a href="{% url 'home' %} "><img src="{% static 'images/logo.png' %}" width="60px"></a></div>
+ <div class="logo-text"><a href="{% url 'home' %}"><span><small>Санкт-Петербургский <br> </small> <small>Исламский Культурный </small> <small>Центр «ИКЦ»</small></span></a></div>
+</div> 
+<div class="header_burger">
+<span></span>
+</div>
+ <nav class="menu_nav">
+        <ul class="nav_list">
+          <li><a href="{% url 'home' %} ">Главная</i></a></li>
+          <li><a href="{% url 'about' %} ">О нас</a></li>
+          <li><a href="{% url 'quran' %} ">Коран</a></li>
+          <li><a href="{% url 'blog' %}">Новости</a></li>
+          <li><a href="{% url 'contact' %} ">Контакты</a></li>
+          {% comment %} <li><a href="{% url 'home' %} ">Регистрация</a></li>
+          <li><a href="{% url 'home' %} ">Войти</a></li> {% endcomment %}
+<!--           <li><a href="{% url 'register' %} ">Регистрация</a></li>
+ --><!--    <a href="#"><i class= "fab fa-whatsapp"></i></a>-->   
+     
+        </ul>
+      </nav>
+
+
+  </div>
+  </div>
+</div> 
+
+<div class="container">  
+<div class="content">    
+{% block home %}
+{% endblock %}
+
+
+{% block auth %}
+{% endblock %}
+
+{% block about %}
+{% endblock %}
+
+{% block blog %}
+{% endblock %}
+
+{% block contact %}
+{% endblock %}
+
+{% block quran %}
+{% endblock %} 
+
+{% block details %}
+{% endblock %} 
+
+{% block family_details %}
+{% endblock %} 
+
+{% block islam %}
+{% endblock %}
+
+{% block family %}
+{% endblock %}
+
+{% block articles %}
+{% endblock %}
+</div>
+</div>
+
+<!--       <div class="sidebar">
+        <div class="searchform">
+          <form id="formsearch" name="formsearch" method="post" action="#">
+            <span>
+            <input name="editbox_search" class="editbox_search" id="editbox_search" maxlength="80" value="Search our ste:" type="text" />
+            </span>
+            <input name="button_search" src="{% static 'images/search.gif' %}" class="button_search" type="image" />
+          </form>
+        </div> 
+                <div class="clr"></div>
+
+        <div class="gadget">
+           <div class="clr"></div>
+          <ul class="sb_menu">
+            <li><a href="#">Расписание молитв</a></li>
+            <li><a href="{% url 'islaminspb' %}">Ислам в СПб</a></li>
+            <li><a href="{% url 'family' %}">Семья</a></li>
+            <li><a href="{% url 'articles' %}">Статьи</a></li>
+          </ul>
+        </div>  
+
+     <h1>
+        <a href="#"><i class= "fab fa-vk"></i></a>
+        <a href="#"><i class= "fab fa-youtube" style="color: #CB0019;"></i></a>
+        <a href="#"><i class= "fab fa-facebook"></i></a>
+        <a href="#"><i class= "fab fa-telegram"></i></a>
+    </h1>
+
+        </div>  
+     </div>
+  <div class="clr"></div>
+</div>--> 
+
+
+
+    
+  <div class="fbg">
+    <div class="fbg_resize">
+<!--       <div class="col c1">
+ -->
+        <h2>Контакты</h2> 
+                  <p>Адрес: 199004, САНКТ-ПЕТЕРБУРГ, ЛИНИЯ 4-Я В.О., 5, ЛИТЕР А, ПОМ. 22 Н</p>
+          <p><i class="fas fa-subway"></i> Метро : Василеостровская</p>
+          <p>теле/факс: 8 (812) 587-93-94</p>
+          <p>E-mail:<a href="#"> islaminspb@gmail.com</a> 
+
+
+   
+        <div class="sn">
+           <h1>
+        <a href="https://www.youtube.com/channel/UC48ySRF8UfZ-gS9P5Q9DdrA" style="color: #CB0019;"><i class= "fab fa-youtube"></i></a> 
+        <a href="https://www.facebook.com/islaminspb"><i class= "fab fa-facebook"></i></a> 
+        <a href="https://vk.com/islaminspb"><i class= "fab fa-vk"></i></a> 
+        <a href="https://www.instagram.com/invites/contact/?i=1tbtowscju3lv&utm_content=dm9kutn" style="color: #702D96;"><i class= "fab fa-instagram"></i></a> 
+        <a href="https://t.me/islaminspb"><i class= "fab fa-telegram"></i></a> 
+        {% comment %} <a href="#"><i class= "fab fa-whatsapp" style="color: #35B10A;"></i></a>  {% endcomment %}
+<!--         <a href="#"><i class= "fab fa-whatsapp"></i></a></h1>
+ -->        </div>
+ 
+
+</div>
+ 
+  <div class="footer">
+    <div class="footer_resize">
+      <p class="lf">Copyright &copy; <a href="#">ИКЦ </a> 2021</p>
+      <div style="clear:both;"></div>
+    </div>
+
+
+
+</div>
+</div>
+</body>
+</html>

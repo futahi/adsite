@@ -1,0 +1,60 @@
+{% extends 'aapp/base.html' %}
+{% load static %}
+{% static "images" as baseUrl %}
+
+{% block auth %}
+{% load crispy_forms_tags %}
+
+
+<div class="content">
+    <div class="content_resize">
+      <div class="mainbar">
+              <div class="mainbar1">
+
+
+        
+
+<!-- 
+          <div class="clr"></div>
+          <hr>
+          <h2>Комментарии ({{comments.count}})</h2>
+        {% if comments %}
+          {% for comment in comments %}
+
+          <div class="comment">
+            <h4>({{comment.name}})</h4>
+            <small> {{comment.date}}</small>
+            <p>{{comment.body | linebreaks}}</p>
+          </div>
+          {% endfor %}
+
+        {% else %}
+          <h4>Нет Комментариев</h4>
+
+        {% endif %}
+          <div class="clr"></div> -->
+          <h2>Регистрация</h2>
+          <form method="POST"></form>
+
+          <div class="clr"></div>
+          <form  method="POST" >
+            <ol>
+              <li>
+            {% csrf_token %}
+            {{form | crispy}}
+            </li>
+
+              <li>
+                <input type="submit" value="Зарегистрировать" class="send" />
+                <div class="clr"></div>
+              </li>
+            </ol>
+          </form>
+
+
+      </div> 
+
+    </div>
+  </div>
+
+  {% endblock %}

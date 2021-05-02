@@ -1,0 +1,43 @@
+{% extends 'aapp/base.html' %}
+{% load static %}
+{% static "images" as baseUrl %}
+
+
+
+{% block articles %}
+
+  <div class="content">
+    <div class="content_resize">
+      <div class="mainbar">
+       {% for article in articles %}
+         
+         <h3><a href="{% url 'article_details' article.id %}">{{article.title}}</a></h3>
+           <a href="{% url 'article_details' article.id %}"> <img  src="{{article.image.url}}" alt="{{article.alter}}"  width="800"></a>
+        <div class="clr"></div>
+
+
+<!--           <h5> {{post.post_date}}</h5>
+          <div class="clr"></div>
+          <p>Posted by <a href="#">Admin</a> <span>&nbsp;&bull;&nbsp;</span> Filed under <a href="#">templates</a>, <a href="#">internet</a></p> -->
+
+          <p>{{article.content|slice:'400'}} ... <a href="{% url 'article_details' article.id %}"><span>Подробнее</span> </p></a>
+<hr>
+
+{% endfor %}           
+         
+         <br>
+         <br>
+         <br>
+         <br>
+
+        {% include 'aapp/pagination.html' with page=articles %}
+
+
+
+      </div>
+    </div>
+  </div>
+
+
+{% endblock %}
+

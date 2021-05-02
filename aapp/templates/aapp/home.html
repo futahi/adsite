@@ -1,0 +1,189 @@
+		{% extends 'aapp/base.html' %}
+		{% load static %}
+		{% static "images" as baseUrl %}
+
+		{% block home %}
+
+<div class="content_resize">
+
+<div class="slider">
+
+
+<div class="w3-content w3-section" >
+	{% for post in posts %}
+<div class="mySlides">	
+	<a href="{% url 'details' post.id %}"> <img   src="{{post.image.url}}" alt="{{post.alter}}"  ></a> 
+	{% comment %} <a href="{% url 'details' post.id %}"><p ><span>{{post.title}}</span></p></a> {% endcomment %}
+</div>
+{% endfor %} 
+</div>
+     {% comment %} <div class="sn">
+    
+	 <h1>
+      	<a href="https://www.youtube.com/channel/UC48ySRF8UfZ-gS9P5Q9DdrA"><i class= "fab fa-youtube" style="color: #CB0019;"></i></a> <br> &emsp;
+		<a href="https://www.facebook.com/islaminspb"><i class= "fab fa-facebook"></i></a><br> &emsp;
+		<a href="https://vk.com/islaminspb"><i class= "fab fa-vk"></i></a><br>&emsp;
+        <a href="https://t.me/islaminspb"><i class= "fab fa-telegram"></i></a><br>&emsp;
+        <a href="https://www.instagram.com/invites/contact/?i=1tbtowscju3lv&utm_content=dm9kutn"><i class= "fab fa-instagram" style="color: #8836B7;"></i></a> <br>
+        {% comment %} <a href="#"><li class= "fab fa-whatsapp" style="color: #35B10A;"></li></a><br> 
+      </h1>
+</div>  {% endcomment %}
+</div>
+
+<script>
+var myIndex = 0;
+carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}    
+  x[myIndex-1].style.display = "block";  
+  setTimeout(carousel, 4000); // Change image every 2 seconds
+}
+</script>
+
+
+
+
+{% if messages %}
+{% for message in messages %}
+<div class="alert alert-{{message.tags}}">
+    {{message}}
+</div>
+{% endfor %}
+{% endif %}
+
+
+		      		<div class="mainbar">
+		      			<div class="mainbar2">
+		      			<div class="mainbar1">
+		      				<h2 style="padding-left: 10px;"><a href="{% url 'blog' %}">Новости</a></h2> 
+
+		      				{% for post in posts %}
+		      				<div class="item"> 
+							  <div class="item_image">
+							  <a href="{% url 'details' post.id %}"> <img  src="{{post.image.url}}" alt="{{post.alter}}"  ></a>
+							  </div>
+							  <div class="item_txt">
+							   <div class="item_label">
+								<h3><a href="{% url 'details' post.id %}">{{post.title}}</a></h3>
+								 </div>
+							        <div class="item_body">
+		      						 <p>{{post.content|slice:'150'}}    <a href="{% url 'details' post.id %}"><span>Подробнее ... </span> </p></a>
+								  		</div> 
+										  </div> 
+		      					
+								
+
+													<!--           <h5> {{post.post_date}}</h5>
+															<div class="clr"></div>
+															<p>Posted by <a href="#">Admin</a> <span>&nbsp;&bull;&nbsp;</span> Filed under <a href="#">templates</a>, <a href="#">internet</a></p> -->
+
+															<!-- <p>{{post.content|slice:'50'}} ... <a href="{% url 'details' post.id %}"><span>чиать</span> </p></a> -->
+
+												</div>        
+												{% endfor %}
+
+
+											</div>
+
+
+													<div class="mainbar1">
+														<h2 style="padding-left: 10px;"><a href="{% url 'articles' %}">Статьи</a></h2>
+
+														{% for article in articles %}
+																<div class="item"> 
+																  <div class="item_image"> 
+															<a href="{% url 'article_details' article.id %}"> <img  src="{{article.image.url}}" alt="{{article.alter}}"  ></a>
+																</div>
+																  <div class="item_txt">
+																<div class="item_label">
+															<h3><a href="{% url 'article_details' article.id %}">{{article.title}}</a></h3>
+															</div>
+															 <div class="item_body">
+															<p>{{article.content|slice:'150'}}    <a href="{% url 'article_details' article.id %}"><span>Подробнее ... </span> </p></a>
+																</div> 
+																</div> 
+
+		<!--           <h5> {{post.post_date}}</h5>
+		         -->
+
+<!-- 		          <p>{{article.content|slice:'50'}} ... <a href="#"><span>чиать</span> </p></a>
+ -->
+		      </div>        
+
+		      {% endfor %}
+
+
+		  </div>
+		  </div>
+
+		  <div class="clr"></div>
+		  <div class="clr"></div>
+		  <div class="clr"></div>
+		  <div class="clr"></div>
+
+
+				  	<h2 style="padding-left: 10px;"><a href="{% url 'family' %}">Семья</a></h2>
+
+		  <div class="mainbar3">
+
+		  				{% for family in families %}
+
+		  		<div class="family">
+		  		<a href="{% url 'family_details' family.id %}"> <img  src="{{family.image.url}}" alt="{{family.alter}}"  ></a>
+		  		<h3><a href="{% url 'family_details' family.id %}">{{family.title}}</a></h3>
+
+		<!--           <h5> {{post.post_date}}</h5>
+		-->
+				<p>{{family.content|slice:'150'}}    <a href="{% url 'family_details' family.id %}"><span>Подробнее ... </span> </p></a>
+	</div>        
+
+	{% endfor %}
+	<br>
+	<br>
+	<br>
+	<br>
+	</div>
+
+			  {% comment %} <div class="clr"></div>
+
+			  	<h2 style="padding-left: 10px;"><a href="{% url 'islaminspb' %}">Ислам в СМИ</a></h2>
+
+			  <div class="mainbar3">			
+
+		  		{% for islam in islams %}
+		  		<div class="family">
+		  		<a href="{% url 'islam_details' islam.id %}"> <img  src="{{islam.image.url}}" alt="{{islam.alter}}"  width="210"></a>
+		  		<h4><a href="{% url 'islam_details' islam.id %}">{{islam.title}}</a></h4>
+
+		<!--           <h5> {{post.post_date}}</h5>
+		-->
+				<p>{{islam.content|slice:'100'}}   <a href="{% url 'islam_details' islam.id %}"><span>Подробнее ... </span> </p></a>
+	</div>         
+
+	{% endfor %}
+	<br>
+	<br>
+	<br>
+	<br>
+	</div>{% endcomment %}
+<div>
+	<link href = "{% static 'https://islamnews.ru/category/family' %}" /> 
+</div>
+
+</div>
+
+
+	</div>
+
+
+
+		{% endblock %}
+
+		      

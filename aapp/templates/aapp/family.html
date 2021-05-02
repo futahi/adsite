@@ -1,0 +1,45 @@
+{% extends 'aapp/base.html' %}
+{% load static %}
+{% static "images" as baseUrl %}
+
+
+
+{% block family %}
+
+  <div class="content">
+    <div class="content_resize">
+      <div class="mainbar">
+       {% for family in families %}
+         <div>
+         <h3><a href="{% url 'family_details' family.id %}">{{family.title}}</a></h3>
+           <a href="{% url 'family_details' family.id %}"> <img  src="{{family.image.url}}" alt="{{family.alter}}" width="800"></a>
+        <div class="clr"></div>
+
+
+<!--           <h5> {{post.post_date}}</h5>
+          <div class="clr"></div>
+          <p>Posted by <a href="#">Admin</a> <span>&nbsp;&bull;&nbsp;</span> Filed under <a href="#">templates</a>, <a href="#">internet</a></p> -->
+
+          <p>{{family.content|slice:'400'}} ... <a href="{% url 'family_details' family.id %}"><span>Подробнее</span> </p></a>
+
+        </div>
+                 <hr> 
+
+{% endfor %}
+         
+         <br>
+         <br>
+         <br>
+         <br>
+
+        {% include 'aapp/pagination.html' with page=families %}
+
+
+
+      </div>
+    </div>
+  </div>
+
+
+{% endblock %}
+

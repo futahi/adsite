@@ -1,0 +1,35 @@
+
+  <div class="content">
+    <div class="content_resize">
+      <div class="mainbar">
+       {% for post in posts %}
+        <div class="article"> 
+         <div>
+         <h3><a href="{% url 'details' post.id %}">{{post.title}}</a></h3>
+           <a href="{% url 'details' post.id %}"> <img  src="{{post.image.url}}" alt="{{post.alter}}" height ="100px" width="170"></a>
+        
+
+<!--           <h5> {{post.post_date}}</h5>
+          <div class="clr"></div>
+          <p>Posted by <a href="#">Admin</a> <span>&nbsp;&bull;&nbsp;</span> Filed under <a href="#">templates</a>, <a href="#">internet</a></p> -->
+
+          <p>{{post.content|slice:'280'}} ... <a href="{% url 'details' post.id %}"><span>чиать</span> </p></a>
+
+        </div>
+        </div>         <hr> 
+
+{% endfor %}
+         
+         <br>
+         <br>
+         <br>
+         <br>
+
+        {% include 'aapp/pagination.html' with page=posts %}
+
+
+
+      </div>
+    </div>
+  </div>
+

@@ -1,0 +1,35 @@
+{% extends 'aapp/base.html' %}
+{% load static %}
+{% static "images" as baseUrl %}
+
+
+{% block about %}
+  
+  <div class="content">
+    <div class="content_resize">
+      <div class="mainbar">
+          <p><span>Санкт-Петербургский Исламский Культурный центр</span> </p>
+
+          <div class="clr"></div>
+
+
+       
+          <h2><span>Руководство организации</span> </h2>
+          <div class="clr"></div>
+          <div class="about">
+        {% for about in abouts %}
+         <img  src="{{about.image.url}}" alt="{{about.alter}}" height ="300px" width="300">
+                <h2>{{about.title}}</h2>
+                <p>{{about.content | linebreaks}} </p>
+             {% endfor %}
+          </div>
+
+        
+
+
+  </div>
+        </>
+      </div>
+    </div>
+{% endblock %}
+

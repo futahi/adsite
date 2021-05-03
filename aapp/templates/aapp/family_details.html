@@ -4,14 +4,12 @@
 {% load crispy_forms_tags %}
 
 {% block family %}
-<div class="content">
-    <div class="content_resize">
+
       <div class="mainbar">
         <div class="details"> 
           <h2>{{family.title}}</h2>
-          <h5> {{family.date}}</h5>
           <div>
-           <img  src="{{family.image.url}}" alt="{{family.alter}}" width="800px">
+           <img  src="{{family.image.url}}" alt="{{family.alter}}" width="100%">
           </div>
 
 <div class="clr"></div>
@@ -62,6 +60,5 @@
 
        
 
-    </div>
-  </div>
+
 {% endblock %}

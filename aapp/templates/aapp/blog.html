@@ -5,15 +5,15 @@
 
 
 {% block blog %}
-
-  <div class="content">
-    <div class="content_resize">
+ 
       <div class="mainbar">
+     <div class="section_name"> <h2>Новости</h2> </div>
        {% for post in posts %}
-    
+       <div class="section_items">
+      <a href="{% url 'details' post.id %}"> <img  src="{{post.image.url}}" alt="{{post.alter}}"  width="100%"></a>
          <h3><a href="{% url 'details' post.id %}">{{post.title}}</a></h3>
-           <a href="{% url 'details' post.id %}"> <img  src="{{post.image.url}}" alt="{{post.alter}}"  width="800"></a>
-      <div class="clr"></div>
+         
+    
 
 
 <!--           <h5> {{post.post_date}}</h5>
@@ -21,8 +21,7 @@
           <p>Posted by <a href="#">Admin</a> <span>&nbsp;&bull;&nbsp;</span> Filed under <a href="#">templates</a>, <a href="#">internet</a></p> -->
 
           <p>{{post.content|slice:'400'}} ... <a href="{% url 'details' post.id %}"><span>читать</span> </p></a>
-
-        <hr> 
+</div>
 
 {% endfor %}
          
@@ -35,8 +34,6 @@
 
 
 
-      </div>
-    </div>
   </div>
 
 

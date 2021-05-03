@@ -62,7 +62,7 @@ function carousel() {
 		      		<div class="mainbar">
 		      			<div class="mainbar2">
 		      			<div class="mainbar1">
-		      				<h2 style="padding-left: 10px;"><a href="{% url 'blog' %}">Новости</a></h2> 
+		      				  <div class="section_name"> <h2 style="padding-left: 10px;"><a href="{% url 'blog' %}">Новости</a></h2>  </div>
 
 		      				{% for post in posts %}
 		      				<div class="item"> 
@@ -94,7 +94,7 @@ function carousel() {
 
 
 													<div class="mainbar1">
-														<h2 style="padding-left: 10px;"><a href="{% url 'articles' %}">Статьи</a></h2>
+													  <div class="section_name">	<h2 style="padding-left: 10px;"><a href="{% url 'articles' %}">Статьи</a></h2> </div>
 
 														{% for article in articles %}
 																<div class="item"> 
@@ -123,13 +123,10 @@ function carousel() {
 		  </div>
 		  </div>
 
-		  <div class="clr"></div>
-		  <div class="clr"></div>
-		  <div class="clr"></div>
-		  <div class="clr"></div>
 
 
-				  	<h2 style="padding-left: 10px;"><a href="{% url 'family' %}">Семья</a></h2>
+
+				  <div class="section_name">	<h2 ><a href="{% url 'family' %}">Семья</a></h2> </div>
 
 		  <div class="mainbar3">
 

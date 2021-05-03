@@ -2,17 +2,16 @@
 {% load static %}
 {% static "images" as baseUrl %}
 
-
-
 {% block family %}
 
-  <div class="content">
-    <div class="content_resize">
       <div class="mainbar">
+      <div class="section_name">   <h2>Семья</h2> </div>
+
        {% for family in families %}
-         <div>
-         <h3><a href="{% url 'family_details' family.id %}">{{family.title}}</a></h3>
-           <a href="{% url 'family_details' family.id %}"> <img  src="{{family.image.url}}" alt="{{family.alter}}" width="800"></a>
+          <div class="section_items">
+         
+           <a href="{% url 'family_details' family.id %}"> <img  src="{{family.image.url}}" alt="{{family.alter}}" width="100%"></a>
+           <h3><a href="{% url 'family_details' family.id %}">{{family.title}}</a></h3>
         <div class="clr"></div>
 
 
@@ -20,7 +19,7 @@
           <div class="clr"></div>
           <p>Posted by <a href="#">Admin</a> <span>&nbsp;&bull;&nbsp;</span> Filed under <a href="#">templates</a>, <a href="#">internet</a></p> -->
 
-          <p>{{family.content|slice:'400'}} ... <a href="{% url 'family_details' family.id %}"><span>Подробнее</span> </p></a>
+          <p>{{family.content|slice:'400'}} ... <a href="{% url 'family_details' family.id %}"><span>читать</span> </p></a>
 
         </div>
                  <hr> 
@@ -37,8 +36,7 @@
 
 
       </div>
-    </div>
-  </div>
+
 
 
 {% endblock %}

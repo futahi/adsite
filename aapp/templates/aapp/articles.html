@@ -6,13 +6,14 @@
 
 {% block articles %}
 
-  <div class="content">
-    <div class="content_resize">
+
       <div class="mainbar">
+            <div class="section_name"> <h2>Статьи</h2> </div>
        {% for article in articles %}
-         
-         <h3><a href="{% url 'article_details' article.id %}">{{article.title}}</a></h3>
-           <a href="{% url 'article_details' article.id %}"> <img  src="{{article.image.url}}" alt="{{article.alter}}"  width="800"></a>
+          <div class="section_items">
+           <a href="{% url 'article_details' article.id %}"> <img  src="{{article.image.url}}" alt="{{article.alter}}"  width="100%"></a> 
+                   <h3><a href="{% url 'article_details' article.id %}">{{article.title}}</a></h3>
+
         <div class="clr"></div>
 
 
@@ -20,9 +21,9 @@
           <div class="clr"></div>
           <p>Posted by <a href="#">Admin</a> <span>&nbsp;&bull;&nbsp;</span> Filed under <a href="#">templates</a>, <a href="#">internet</a></p> -->
 
-          <p>{{article.content|slice:'400'}} ... <a href="{% url 'article_details' article.id %}"><span>Подробнее</span> </p></a>
+          <p>{{article.content|slice:'400'}} ... <a href="{% url 'article_details' article.id %}"><span>читать</span> </p></a>
 <hr>
-
+</div>
 {% endfor %}           
          
          <br>
@@ -35,8 +36,7 @@
 
 
       </div>
-    </div>
-  </div>
+
 
 
 {% endblock %}

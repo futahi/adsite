@@ -4,18 +4,17 @@
 
 
 {% block quran %}
-  <div class="content">
-    <div class="content_resize">
+
       <div class="mainbar">
+      <div class="section_name"> <h2>Коран</h2> </div>
 {% for quran in qurans %}
 
           <a href="{% url 'sura_details' quran.id %}">
-          <h3>{{quran.sura_title}}</h3></a>
+          <h4 style="color:rgb(4, 80, 124);padding:7px;">{{quran.sura_title}}</h4></a>
           <div class="clr"></div>
 {% endfor %}
       
       </div>
-    </div>
-  </div>
+
 {% endblock %}
 

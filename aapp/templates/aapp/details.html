@@ -5,15 +5,14 @@
 
 {% block blog %}
 
-<div class="content">
-    <div class="content_resize">
+
       <div class="mainbar">
         <div class="details"> 
 
           <h2>{{post.title}}</h2>
           <h5> {{post.date}}</h5>
           <div>
-           <img  src="{{post.image.url}}" alt="{{post.alter}}" >
+           <img  src="{{post.image.url}}" alt="{{post.alter}}" width="100%" >
           </div>
          <div class="clr"></div>
 
@@ -61,7 +60,6 @@
             </ol>
           </form>
 
-    </div>
-  </div>
+    
   {% endblock %}
 

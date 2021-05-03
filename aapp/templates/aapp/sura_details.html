@@ -4,17 +4,15 @@
 
 
 {% block quran %}
-  <div class="content">
-    <div class="content_resize">
+
       <div class="mainbar">
 
 
-         <h2>{{sura.sura_title}}</h2>
-         <p> <h4>{{sura.sura_content| linebreaks}}</h4></p>
+         <h4 style="color:rgb(4, 80, 124); "> {{sura.sura_title}}</h4>
+          <p style="padding:10px;">{{sura.sura_content| linebreaks}}</p>
           <div class="clr"></div>
 
       </div>
-    </div>
-  </div>
+
 {% endblock %}
 
